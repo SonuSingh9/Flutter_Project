@@ -1,4 +1,5 @@
 import 'package:first_app/models/catalog.dart';
+import 'package:first_app/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -60,15 +61,7 @@ class _HomeDetailPageState extends State<HomeDetailPage>
           alignment: MainAxisAlignment.spaceBetween,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor:
-                    WidgetStateProperty.all(context.theme.colorScheme.primary),
-                shape: WidgetStateProperty.all(StadiumBorder()),
-              ),
-               child: "Add to Cart".text.color(Colors.yellow).make(),
-            ).wh(140, 50),
+            AddToCart(catalog: catalog).wh(140, 50),
           ],
         ).p16(),
       ),

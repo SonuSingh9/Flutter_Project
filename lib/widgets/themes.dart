@@ -23,7 +23,7 @@ class MyTheme{
     );
 
 
-        static ThemeData get darkTheme => ThemeData(
+       static ThemeData get darkTheme => ThemeData(
   brightness: Brightness.dark,
   fontFamily: GoogleFonts.poppins().fontFamily,
   elevatedButtonTheme: ElevatedButtonThemeData(
@@ -33,17 +33,21 @@ class MyTheme{
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(foregroundColor: lightBluishColor),
   ),
-  colorScheme: ColorScheme.dark( 
+  colorScheme: const ColorScheme.dark(
     secondary: Colors.white,
   ),
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     color: Colors.black,
     elevation: 0.0,
     iconTheme: IconThemeData(color: Colors.white),
-    toolbarTextStyle: TextTheme().bodyMedium,
-    titleTextStyle: TextTheme().titleLarge,
+    titleTextStyle: TextStyle(
+      color: Colors.white,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w500,
+    ),
   ),
 );
+
 
 
         static Color creamColor = Color(0xffe0f7fa);

@@ -1,12 +1,13 @@
 import 'package:first_app/models/catalog.dart';
 import 'package:first_app/pages/home_details_page.dart';
+import 'package:first_app/widgets/home_widgets/add_to_cart.dart';
 import 'package:first_app/widgets/home_widgets/catalog_image.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CatalogList extends StatelessWidget {
   const CatalogList({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -53,14 +54,7 @@ class CatalogItem extends StatelessWidget {
                   alignment: MainAxisAlignment.spaceBetween,
                   children: [
                     "\$${catalog.price}".text.bold.xl.make(),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor: WidgetStateProperty.all(context.theme.colorScheme.primary),
-                        shape: WidgetStateProperty.all(StadiumBorder()),
-                      ),
-                      child: "Add to Cart".text.color(Colors.yellow).make(),
-                    ),
+                    AddToCart(catalog: catalog),
                   ],
                 ).pOnly(right: 8.0),
               ],
@@ -71,3 +65,4 @@ class CatalogItem extends StatelessWidget {
     ).color(context.cardColor).rounded.square(170).make().py16();
   }
 }
+
